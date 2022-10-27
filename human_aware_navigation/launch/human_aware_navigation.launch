@@ -1,0 +1,54 @@
+<launch>
+  <!-- RoboSense RS-LiDAR-16 -->
+  <include file="$(find rslidar_pointcloud)/launch/cloud_nodelet.launch"/>
+  
+  <!-- FLOBOT 3D Object Detector -->
+  <node pkg="object3d_detector_gpu" type="object3d_detector_gpu" name="object3d_detector_gpu">
+    <param name="print_fps" type="bool" value="true"/>
+    <!-- <remap from="rslidar_points" to="/lidar_background_removal/cloud_filtered" /> -->
+    <remap from="/object3d_detector_gpu/people" to="/people"/>
+    <param name="model_file_name" type="string" value="$(find object3d_detector_gpu)/model/pedestrian.model"/>
+    <param name="range_file_name" type="string" value="$(find object3d_detector_gpu)/model/pedestrian.range"/>
+    <param name="human_size_limit" type="bool" value="true"/>
+  </node>
+  
+  <!-- Lidar Background Removal -->
+  <node name="lidar_background_removal" pkg="lidar_background_removal" type="lidar_background_removal" output="screen">
+  <remap from="velodyne_points" to="rslidar_points"/> 
+  <param name="three_d" type="bool" value="true"/>
+  </node>
+  
+  <!-- RealSense driver: camera_front, camera_rear, camera_left, camera_right -->
+  <group ns="camera"> 
+    <include file="$(find realsense2_camera)/launch/includes/nodelet.launch.xml">
+      <arg name="tf_prefix"         value="camera"/>
+      <arg name="enable_pointcloud" value="true"/>
+      <arg name="enable_sync"       value="true"/>
+      <arg name="ordered_pc"        value="true"/>
+    </include>
+  </group>
+  
+  <!-- YOLO -->
+  <include file="$(find darknet_ros)/launch/darknet_ros.launch">
+    <arg name="network_param_file" value="$(find darknet_ros)/config/yolov2-tiny.yaml"/>
+    <arg name="image" value="/camera/color/image_raw"/>
+  </include>
+  <node name="rgbd_detection2d_3d" pkg="rgbd_detection2d_3d" type="rgbd_detection2d_3d" output="screen">
+    <remap from="/rgbd_detection2d_3d/people" to="/rgbd_detection2d_3d/camera_not_filtered_people"/> 
+  </node>
+  
+  <!-- NBellotto's Bayes People Tracker -->
+  <rosparam command="load" file="$(find bayes_people_tracker)/config/object3d_detector.yaml"/>
+  <node pkg="bayes_people_tracker" type="bayes_people_tracker" name="bayes_people_tracker" output="screen" respawn="false">
+    <param name="target_frame" type="string" value="base_link"/>
+  </node>
+  
+  <!-- tf -->
+  <!-- 3D LiDAR -->
+  <node pkg="tf" type="static_transform_publisher" name="rslidar" args="0 0 0.627 0 0 0 base_link rslidar 100" />
+  <!-- Forward camera -->
+  <node pkg="tf" type="static_transform_publisher" name="camera_link" args="0.106 0 0.327 0 0 0 1 base_link camera_link 100" />
+  
+  <!-- ROS Visualization -->
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find human_aware_navigation)/cfg/human_aware_navigation.rviz" />
+</launch>

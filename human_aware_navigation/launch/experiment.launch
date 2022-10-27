@@ -1,0 +1,14 @@
+<launch>
+
+  <node pkg="human_aware_navigation" type="experiment1.py" name="experiment" >
+    <param name="tolerance " value="0.5"/>
+    <param name="experiment " value="vertical"/>
+  </node>
+  
+  <node pkg="human_aware_navigation" type="metrics_list.py" name="metrics" >
+    <param name="social_zone " value="0.4"/>
+    <param name="close_zone " value="0.2"/>
+    <param name="speed " value="0.3"/>
+  </node>
+  
+</launch>

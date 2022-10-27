@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package>
+  <name>object3d_detector_gpu</name>
+  <version>0.0.1</version>
+  <description>This is a CUDA-PCL-based ROS package for object detection (currently pedestrian) in 3D point clouds.</description>
+  <maintainer email="iaroslav.okunevich@utbm.fr">Iaroslav Okunevich</maintainer>
+  <author email="zhi.yan@utbm.fr">Zhi Yan</author>
+  <license>BSD</license>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <build_depend>roscpp</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>visualization_msgs</build_depend>
+  <build_depend>people_msgs</build_depend>
+  <build_depend>pcl_conversions</build_depend>
+  <build_depend>pcl_ros</build_depend>
+  <build_depend>libsvm-dev</build_depend>
+  <build_depend>nvidia-cuda-dev</build_depend>
+  
+  <run_depend>roscpp</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>visualization_msgs</run_depend>
+  <run_depend>people_msgs</run_depend>
+  <run_depend>pcl_conversions</run_depend>
+  <run_depend>pcl_ros</run_depend>
+  <run_depend>libsvm</run_depend>
+  <run_depend>nvidia-cuda</run_depend>
+</package>
