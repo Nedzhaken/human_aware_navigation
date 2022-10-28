@@ -23,7 +23,9 @@ catkin_make
 
 ## Run
 ```sh
+// Just to see the effect:
 roslaunch human_aware_navigation human_aware_navigation.launch
+// Want to do benchmarking:
 roslaunch human_aware_navigation experiment.launch
 ```
 
