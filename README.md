@@ -14,7 +14,7 @@ The instrumented CAD designs and 3D models of sensor mounts can be found [here](
 ```sh
 sudo apt install ros-melodic-navigation ros-melodic-people ros-melodic-navigation-layers
 cd catkin_ws/src
-git clone https://github.com/yzrobot/human_aware_navigation
+git clone https://github.com/Nedzhaken/human_aware_navigation
 cd catkin_ws
 catkin_make
 ```
