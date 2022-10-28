@@ -2,11 +2,11 @@
 
 ## Software architecture
 
-![software_arch.jpg](software_arch.jpg)
+<img src="software_arch.jpg" alt="software_arch" width="480"/>
 
 ## Hardware platform
 
-![Isaac.jpg](Isaac.jpg)
+<img src="Isaac.jpg" alt="Isaac" width="480"/>
 
 The instrumented CAD designs and 3D models of sensor mounts can be found [here](hardware).
 
