@@ -4,6 +4,8 @@
 
 <img src="software_arch.jpg" alt="software_arch" width="480"/>
 
+The socially-compliant (SC) navigation module is designed as a plug-and-play component, which can be deployed on different computing units or different robots as needed.
+
 ## Hardware platform
 
 <img src="Isaac.jpg" alt="Isaac" width="480"/>
@@ -13,9 +15,9 @@ The instrumented CAD designs and 3D models of sensor mounts can be found [here](
 ## Build
 ```sh
 sudo apt install ros-melodic-navigation ros-melodic-people ros-melodic-navigation-layers
-cd catkin_ws/src
+cd ~/catkin_ws/src/
 git clone https://github.com/Nedzhaken/human_aware_navigation
-cd catkin_ws
+cd ~/catkin_ws
 catkin_make
 ```
 
