@@ -1,5 +1,15 @@
 # human_aware_navigation
 
+## Software architecture
+
+![software_arch.jpg](software_arch.jpg)
+
+## Hardware platform
+
+![Isaac.jpg](Isaac.jpg)
+
+The instrumented CAD designs and 3D models of sensor mounts can be found [here](hardware).
+
 ## Build
 ```sh
 sudo apt install ros-melodic-navigation ros-melodic-people ros-melodic-navigation-layers
@@ -58,3 +68,19 @@ Eigen 3
 
 \* - during the experiment the agent was a robot or another person.
 
+## Citation
+
+If you are considering using this repository, please reference the following:
+
+```
+@article{io22software,
+   author  = {Iaroslav Okunevich and Vincent Hilaire and Stephane Galland and Olivier Lamotte and Liubov Shilova and Yassine Ruichek and Zhi Yan},
+   title   = {Software-hardware Integration and Human-centered Benchmarking for Socially-compliant Robot Navigation},
+   journal = {CoRR},
+   volume = {abs/2210.15628},
+   year = {2022},
+   url = {http://arxiv.org/abs/2210.15628},
+   archivePrefix = {arXiv},
+   eprint = {2210.15628}
+}
+```
