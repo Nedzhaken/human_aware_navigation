@@ -4,7 +4,11 @@
 
 <img src="software_arch.jpg" alt="software_arch" width="480"/>
 
-The socially-compliant (SC) navigation module is designed as a plug-and-play component, which can be deployed on different computing units or different robots as needed.
+The socially-compliant (SC) navigation module is designed as a plug-and-play component, which can be deployed on different computing units or different robots as needed. What we've tested so far:
+
+1. [Social Navigation Layers](https://github.com/DLu/navigation_layers) (deployed on the onboard PC side, CPU-based)
+2. [Time Dependent Planning](https://github.com/marinaKollmitz/human_aware_navigation) (deployed on the onboard PC side, CPU-based)
+3. [Collision Avoidance with Deep Reinforcement Learning](https://github.com/mit-acl/cadrl_ros) (deployed on the AGX side, GPU-based, SC-ready)
 
 ## Hardware platform
 
