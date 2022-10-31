@@ -1,0 +1,4 @@
+﻿"camera plate width"=220
+"camera plate length"=220
+"camera height"= 100
+"zero height"= 100
