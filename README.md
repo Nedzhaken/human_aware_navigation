@@ -48,7 +48,6 @@ Eigen 3
 
 | Warmth | Competence | Discomfort |  
 | :--- | :---: | :---: |
-<!-- | **Warmth** | **Competence** | **Discomfort** | -->
 | Happy | Capable | Scary |
 | Feeling  | Responsive | Strange |
 | Social  | Interactive | Awkward |
