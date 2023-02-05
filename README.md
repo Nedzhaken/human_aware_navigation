@@ -44,9 +44,19 @@ PCL 1.8
 Eigen 3
 ```
 
-## The example of the questionnare for the experiment
+## The Robotic Social Attributes
 
-### Could you rate your impression of the agent’s* behavior with the following criteria (Godspeed)?
+|  |  |  |  
+| :--- | :---: | :---: |
+| Warmth | Competence | Discomfort |
+| Happy | Capable | Scary |
+| Feeling  | Responsive | Strange |
+| Social  | Interactive | Awkward |
+| Organic  | Reliable | Dangerous |
+| Compassionate  | Competent | Awful |
+| Emotional  | Knowledgeable | Aggressive |
+
+### Could you rate your impression of the agent’s* behavior with the following criteria (RoSAS)?
 
 |  |  |  |  |  |  |  |
 | :--- | :---: | :---: | :---: | :---: | :---: | ---: |
