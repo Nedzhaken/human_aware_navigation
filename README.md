@@ -44,11 +44,11 @@ PCL 1.8
 Eigen 3
 ```
 
-## The Robotic Social Attributes
+## The Robotic Social Attributes Scale (RoSAS)
 
 |  |  |  |  
 | :--- | :---: | :---: |
-| Warmth | Competence | Discomfort |
+| **Warmth** | **Competence** | **Discomfort** |
 | Happy | Capable | Scary |
 | Feeling  | Responsive | Strange |
 | Social  | Interactive | Awkward |
@@ -56,7 +56,7 @@ Eigen 3
 | Compassionate  | Competent | Awful |
 | Emotional  | Knowledgeable | Aggressive |
 
-### Could you rate your impression of the agent’s* behavior with the following criteria (RoSAS)?
+<!-- ### Could you rate your impression of the agent’s* behavior with the following criteria (RoSAS)?
 
 |  |  |  |  |  |  |  |
 | :--- | :---: | :---: | :---: | :---: | :---: | ---: |
@@ -85,7 +85,7 @@ Eigen 3
 | I do not accept<br />the agent's behavior  | 1 | 2 | 3 | 4 | 5 | I accept<br />the agent's behavior |
 
 \* - during the experiment the agent was a robot or another person.
-
+ -->
 ## Citation
 
 If you are considering using this repository, please reference the following:
