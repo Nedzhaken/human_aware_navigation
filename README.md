@@ -46,9 +46,9 @@ Eigen 3
 
 ## The Robotic Social Attributes Scale (RoSAS)
 
-|  |  |  |  
+| Warmth | Competence | Discomfort |  
 | :--- | :---: | :---: |
-| **Warmth** | **Competence** | **Discomfort** |
+<!-- | **Warmth** | **Competence** | **Discomfort** | -->
 | Happy | Capable | Scary |
 | Feeling  | Responsive | Strange |
 | Social  | Interactive | Awkward |
