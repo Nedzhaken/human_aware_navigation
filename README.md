@@ -92,14 +92,13 @@ The link to the questionnare - https://forms.gle/4Lr4KP1E81SJFAET9
 If you are considering using this repository, please reference the following:
 
 ```
-@article{io22software,
-   author  = {Iaroslav Okunevich and Vincent Hilaire and Stephane Galland and Olivier Lamotte and Liubov Shilova and Yassine Ruichek and Zhi Yan},
-   title   = {Software-hardware Integration and Human-centered Benchmarking for Socially-compliant Robot Navigation},
-   journal = {CoRR},
-   volume = {abs/2210.15628},
-   year = {2022},
-   url = {http://arxiv.org/abs/2210.15628},
-   archivePrefix = {arXiv},
-   eprint = {2210.15628}
+@inproceedings{okunevich23ecmr,
+title={Human-centered Benchmarking for Socially-compliant Robot Navigation},
+author={Iaroslav Okunevich and Vincent Hilaire and Stephane Galland and Olivier Lamotte and Liubov Shilova and Yassine Ruichek and Zhi Yan},
+booktitle={Proceedings of the 2023 European Conference on Mobile Robots (ECMR)},
+pages = {1--7},
+address = {Coimbra, Portugal},
+month = {September},
+year={2023}
 }
 ```
