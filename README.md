@@ -56,7 +56,7 @@ As shown in the turquoise block in the software architecture diagram, a module f
 2. [Time Dependent Planning](https://github.com/marinaKollmitz/human_aware_navigation) (deployed on the onboard PC side, CPU-based)
 3. [Collision Avoidance with Deep Reinforcement Learning](https://github.com/mit-acl/cadrl_ros) (deployed on the AGX side, GPU-based)
 
-We evaluate the social properties of the above methods from both the robot and human perspectives. For the latter we used the **Robotic Social Attributes Scale (RoSAS)** questionnaire: https://forms.gle/4Lr4KP1E81SJFAET9. Details on this part can be found in our paper:
+We evaluated the social properties of the above methods from both the robot and human perspectives. For the latter we used the **Robotic Social Attributes Scale (RoSAS)** questionnaire: https://forms.gle/4Lr4KP1E81SJFAET9. Details on this part can be found in our paper:
 
 ```
 @inproceedings{okunevich23ecmr,
