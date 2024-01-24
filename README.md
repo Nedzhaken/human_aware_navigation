@@ -1,22 +1,26 @@
-# human_aware_navigation
+# A software-hardware integration scheme for human-aware robot navigation
 
-## Software architecture
+*Please open an issue if you have any questions.*
+
+*A paper detailing the scheme will be released soon.*
+
+## The Prototype
+
+<img src="Isaac.jpg" alt="Isaac.jpg" width="480"/>
+
+<img src="scope.jpg" alt="scope.jpg" width="480"/>
+
+## Hardware Architecture
+
+<img src="hardware_arch.jpg" alt="hardware_arch.jpg" width="480"/>
+
+To reproduce our perception tower, please check: [hardware](hardware) 
+
+## Software Architecture
 
 <img src="software_arch.jpg" alt="software_arch" width="480"/>
 
-The socially-compliant (SC) navigation module is designed as a plug-and-play component, which can be deployed on different computing units or different robots as needed. What we've tested so far:
-
-1. [Social Navigation Layers](https://github.com/DLu/navigation_layers) (deployed on the onboard PC side, CPU-based)
-2. [Time Dependent Planning](https://github.com/marinaKollmitz/human_aware_navigation) (deployed on the onboard PC side, CPU-based)
-3. [Collision Avoidance with Deep Reinforcement Learning](https://github.com/mit-acl/cadrl_ros) (deployed on the AGX side, GPU-based, SC-ready)
-
-## Hardware platform
-
-<img src="Isaac.jpg" alt="Isaac" width="480"/>
-
-The instrumented CAD designs and 3D models of sensor mounts can be found [here](hardware).
-
-## Build
+### Build
 ```sh
 sudo apt install ros-melodic-navigation ros-melodic-people ros-melodic-navigation-layers
 cd ~/catkin_ws/src/
@@ -25,7 +29,7 @@ cd ~/catkin_ws
 catkin_make
 ```
 
-## Run
+### Run
 ```sh
 // Just to see the effect:
 roslaunch human_aware_navigation human_aware_navigation.launch
@@ -33,7 +37,7 @@ roslaunch human_aware_navigation human_aware_navigation.launch
 roslaunch human_aware_navigation experiment.launch
 ```
 
-## Tested environment
+### Tested environment
 ```
 Jetson Xavier AGX
 Ubuntu 18.04
@@ -44,52 +48,15 @@ PCL 1.8
 Eigen 3
 ```
 
-## The Robotic Social Attributes Scale (RoSAS)
+## Human-aware Navigation
 
-The link to the questionnare - https://forms.gle/4Lr4KP1E81SJFAET9
+As shown in the turquoise block in the software architecture diagram, a module for human-aware navigation can be deployed on any computing unit as needed. So far we've benchmarked :
 
-| Warmth | Competence | Discomfort |  
-| :--- | :---: | :---: |
-| Happy | Capable | Scary |
-| Feeling  | Responsive | Strange |
-| Social  | Interactive | Awkward |
-| Organic  | Reliable | Dangerous |
-| Compassionate  | Competent | Awful |
-| Emotional  | Knowledgeable | Aggressive |
+1. [Social Navigation Layers](https://github.com/DLu/navigation_layers) (deployed on the onboard PC side, CPU-based)
+2. [Time Dependent Planning](https://github.com/marinaKollmitz/human_aware_navigation) (deployed on the onboard PC side, CPU-based)
+3. [Collision Avoidance with Deep Reinforcement Learning](https://github.com/mit-acl/cadrl_ros) (deployed on the AGX side, GPU-based)
 
-<!-- ### Could you rate your impression of the agent’s* behavior with the following criteria (RoSAS)?
-
-|  |  |  |  |  |  |  |
-| :--- | :---: | :---: | :---: | :---: | :---: | ---: |
-| Moving ridigly | 1 | 2 | 3 | 4 | 5 | &nbsp;&nbsp;&nbsp;&nbsp; Moving elegantly |
-| Dislike | 1 | 2 | 3 | 4 | 5 | Like |
-| Incompetent &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | 1 | 2 | 3 | 4 | 5 | Competent |
-| Unconscious  | 1 | 2 | 3 | 4 | 5 | Conscious |
-| Unfriendly  | 1 | 2 | 3 | 4 | 5 | Friendly |
-| Unintelligent  | 1 | 2 | 3 | 4 | 5 | Intelligent |
-| Machinelike  | 1 | 2 | 3 | 4 | 5 | Humanlike |
-| Unpleasant  | 1 | 2 | 3 | 4 | 5 | Pleasant |
-| Foolish  | 1 | 2 | 3 | 4 | 5 | Sensible |
-
-### Could you rate your emotional state with the following criteria (Godspeed)?
-
-|  |  |  |  |  |  |  |
-| :--- | :---: | :---: | :---: | :---: | :---: | ---: |
-| Anxious | 1 | 2 | 3 | 4 | 5 | Relaxed |
-| Agitated  | 1 | 2 | 3 | 4 | 5 | Calm |
-| Quiescent &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 1 | 2 | 3 | 4 | 5 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Surprised |
-
-### Could you rate the general behavior of the agent* (13th question)?
-
-|  |  |  |  |  |  |  |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| I do not accept<br />the agent's behavior  | 1 | 2 | 3 | 4 | 5 | I accept<br />the agent's behavior |
-
-\* - during the experiment the agent was a robot or another person.
- -->
-## Citation
-
-If you are considering using this repository, please reference the following:
+We evaluate the social properties of the above methods from both the robot and human perspectives. For the latter we used the **Robotic Social Attributes Scale (RoSAS)** questionnaire: https://forms.gle/4Lr4KP1E81SJFAET9. Details on this part can be found in our paper:
 
 ```
 @inproceedings{okunevich23ecmr,
