@@ -62,7 +62,7 @@ We evaluated the social properties of the above methods from both the robot and 
 @inproceedings{okunevich23ecmr,
 title={Human-centered Benchmarking for Socially-compliant Robot Navigation},
 author={Iaroslav Okunevich and Vincent Hilaire and Stephane Galland and Olivier Lamotte and Liubov Shilova and Yassine Ruichek and Zhi Yan},
-booktitle={Proceedings of the 2023 European Conference on Mobile Robots (ECMR)},
+booktitle={2023 European Conference on Mobile Robots (ECMR)},
 pages = {1--7},
 address = {Coimbra, Portugal},
 month = {September},
