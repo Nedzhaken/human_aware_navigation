@@ -68,4 +68,12 @@ address = {Coimbra, Portugal},
 month = {September},
 year={2023}
 }
+@inproceedings{okunevich24arso,
+title={An Open-source Software-hardware Integration Scheme for Embodied Human Perception in Service Robotics},
+author={Iaroslav Okunevich and Vincent Hilaire and Stephane Galland and Olivier Lamotte and Yassine Ruichek and Zhi Yan},
+booktitle={Proceedings of the 20th IEEE International Conference on Advanced Robotics and Its Social Impacts (ARSO)},
+address = {Hong Kong, China},
+month = {May},
+year={2024}
+}
 ```
