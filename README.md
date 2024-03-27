@@ -2,18 +2,6 @@
 
 *Please open an issue if you have any questions.*
 
-```
-@inproceedings{okunevich24arso,
-title={An Open-source Software-hardware Integration Scheme for Embodied Human Perception in Service Robotics},
-author={Iaroslav Okunevich and Vincent Hilaire and Stephane Galland and Olivier Lamotte and Yassine Ruichek and Zhi Yan},
-booktitle={Proceedings of the 20th IEEE International Conference on Advanced Robotics and Its Social Impacts (ARSO)},
-address = {Hong Kong, China},
-month = {May},
-year={2024},
-organization={IEEE}
-}
-```
-
 ## The Prototype
 
 <img src="Isaac.jpg" alt="Isaac.jpg" width="480"/>
@@ -58,9 +46,26 @@ PCL 1.8
 Eigen 3
 ```
 
+### Citation
+
+If you are considering using this code, please reference the following:
+
+```
+@inproceedings{okunevich24arso,
+title={An Open-source Software-hardware Integration Scheme for Embodied Human Perception in Service Robotics},
+author={Iaroslav Okunevich and Vincent Hilaire and Stephane Galland and Olivier Lamotte and Yassine Ruichek and Zhi Yan},
+booktitle={Proceedings of the 20th IEEE International Conference on Advanced Robotics and Its Social Impacts (ARSO)},
+pages = {},
+address = {Hong Kong, China},
+month = {May},
+year={2024},
+organization={IEEE}
+}
+```
+
 ## Human-aware Navigation
 
-As shown in the turquoise block in the software architecture diagram, a module for human-aware navigation can be deployed on any computing unit as needed. So far we've benchmarked :
+As shown in the turquoise block in the software architecture diagram, a module for human-aware navigation can be deployed on any computing unit as needed. So far we've benchmarked:
 
 1. [Social Navigation Layers](https://github.com/DLu/navigation_layers) (deployed on the onboard PC side, CPU-based)
 2. [Time Dependent Planning](https://github.com/marinaKollmitz/human_aware_navigation) (deployed on the onboard PC side, CPU-based)
@@ -72,7 +77,7 @@ We evaluated the social properties of the above methods from both the robot and 
 @inproceedings{okunevich23ecmr,
 title={Human-centered Benchmarking for Socially-compliant Robot Navigation},
 author={Iaroslav Okunevich and Vincent Hilaire and Stephane Galland and Olivier Lamotte and Liubov Shilova and Yassine Ruichek and Zhi Yan},
-booktitle={2023 European Conference on Mobile Robots (ECMR)},
+booktitle={Proceedings of the 2023 European Conference on Mobile Robots (ECMR)},
 pages = {1--7},
 address = {Coimbra, Portugal},
 month = {September},
