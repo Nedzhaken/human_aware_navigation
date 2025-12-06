@@ -253,45 +253,46 @@ void Object3dDetector::extractCluster(pcl::PointCloud<pcl::PointXYZ>::Ptr pc) {
       cudaStreamSynchronize(stream);
       
       for(int i = 1; i <= indexEC[0]; i++) {
-	pcl::PointCloud<pcl::PointXYZ>::Ptr cluster(new pcl::PointCloud<pcl::PointXYZ>);
-	cluster->width = indexEC[i];
-	cluster->height = 1;
-	cluster->points.resize(cluster->width * cluster->height);
-	cluster->is_dense = true;
-	
-	unsigned int outoff = 0;
-	for(int w = 1; w < i; w++) {
-	  if(i > 1) {
-	    outoff += indexEC[w];
-	  }
-	}
-	
-	for(std::size_t k = 0; k < indexEC[i]; ++k) {
-	  cluster->points[k].x = outputEC[(outoff+k)*4+0];
-	  cluster->points[k].y = outputEC[(outoff+k)*4+1];
-	  cluster->points[k].z = outputEC[(outoff+k)*4+2];
-	}
-	
-	Eigen::Vector4f min, max, centroid;
-	pcl::getMinMax3D(*cluster, min, max);
-      	pcl::compute3DCentroid(*cluster, centroid);
-	
-      	// Size limitation is not cool, but can increase fps
-	if(human_size_limit_ &&
-	   (max[0]-min[0] < 0.2 || max[0]-min[0] > 1.0 ||
-	    max[1]-min[1] < 0.2 || max[1]-min[1] > 1.0 ||
-	    max[2]-min[2] < 0.5 || max[2]-min[2] > 2.0)) {
-	  continue;
-	}
-	
-	Feature f;
-	extractFeature(cluster, f, min, max, centroid);
-	features_.push_back(f);
+        pcl::PointCloud<pcl::PointXYZ>::Ptr cluster(new pcl::PointCloud<pcl::PointXYZ>);
+        cluster->width = indexEC[i];
+        cluster->height = 1;
+        cluster->points.resize(cluster->width * cluster->height);
+        cluster->is_dense = true;
+        
+        unsigned int outoff = 0;
+        for(int w = 1; w < i; w++) {
+          if(i > 1) {
+            outoff += indexEC[w];
+          }
+        }
+        
+        for(std::size_t k = 0; k < indexEC[i]; ++k) {
+          cluster->points[k].x = outputEC[(outoff+k)*4+0];
+          cluster->points[k].y = outputEC[(outoff+k)*4+1];
+          cluster->points[k].z = outputEC[(outoff+k)*4+2];
+        }
+        
+        Eigen::Vector4f min, max, centroid;
+        pcl::getMinMax3D(*cluster, min, max);
+              pcl::compute3DCentroid(*cluster, centroid);
+        
+              // Size limitation is not cool, but can increase fps
+        if(human_size_limit_ &&
+          (max[0]-min[0] < 0.2 || max[0]-min[0] > 1.0 ||
+            max[1]-min[1] < 0.2 || max[1]-min[1] > 1.0 ||
+            max[2]-min[2] < 0.5 || max[2]-min[2] > 2.0)) {
+          continue;
+        }
+        
+        Feature f;
+        extractFeature(cluster, f, min, max, centroid);
+        features_.push_back(f);
       }
       
       cudaFree(inputEC);
       cudaFree(outputEC);
       cudaFree(indexEC);
+      cudaStreamDestroy(stream);
     }
   }
 }
